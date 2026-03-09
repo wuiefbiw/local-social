@@ -27,7 +27,7 @@ public class Blog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
+    /** 
      * 主键
      */
     @TableId(value = "id", type = IdType.AUTO)

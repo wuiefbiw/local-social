@@ -20,9 +20,9 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(new Logininterceptor())
                 .excludePathPatterns(
                         "/shop/**",
-                        "voucher/**",
-                        "shop-type",
-                        "upload/**",
+                        "/voucher/**",
+                        "/shop-type",
+                        "/upload/**",
                         "/blog/hot",
                         //"/user/me",
                         "/user/code",    //发送验证码
