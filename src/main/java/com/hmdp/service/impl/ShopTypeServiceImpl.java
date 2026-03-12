@@ -1,6 +1,7 @@
 package com.hmdp.service.impl;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
 import com.hmdp.dto.Result;
 import com.hmdp.entity.ShopType;
@@ -36,7 +37,8 @@ public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> i
         String shop_type_JSON = stringRedisTemplate.opsForValue().get(CACHE_SHOP_TYPE_KEY);
         //2. 如果存在，直接返回
         if (StrUtil.isNotBlank(shop_type_JSON)) {
-            List<ShopType> list = JSONUtil.toList(shop_type_JSON, ShopType.class);
+            JSONArray jsonArray = JSONUtil.parseArray(shop_type_JSON);
+            List<ShopType> list = jsonArray.toList(ShopType.class);
             return Result.ok(list);
         }
         //3. 不存在，查询数据库

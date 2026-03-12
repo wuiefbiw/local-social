@@ -53,6 +53,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
     private RedissonClient redissonClient;
 
     private static final DefaultRedisScript<Long> SECKILL_SCRIPT;
+
     static {
         SECKILL_SCRIPT = new DefaultRedisScript<>();
         SECKILL_SCRIPT.setLocation(new ClassPathResource("seckill.lua"));
@@ -67,6 +68,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
     private void init() {
         SECKILL_ORDER_EXECUTOR.submit(new VoucherOrderHandler());
     }
+
     // 用于线程池处理的任务
 // 当初始化完毕后，就会去从对列中去拿信息
     private class VoucherOrderHandler implements Runnable {
@@ -107,9 +109,11 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
             }
         }
     }
-    private BlockingQueue<VoucherOrder> orderTasks =new ArrayBlockingQueue<>(1024 * 1024);
+
+    private BlockingQueue<VoucherOrder> orderTasks = new ArrayBlockingQueue<>(1024 * 1024);
 
     private IVoucherOrderService proxy;
+
     @Override
     public Result seckillVoucher(Long voucherId) {
         //1.执行lua脚本
@@ -138,49 +142,50 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
         // 2.6.放入阻塞队列
         orderTasks.add(voucherOrder);
         //3.获取代理对象
-        proxy = (IVoucherOrderService)AopContext.currentProxy();
+        proxy = (IVoucherOrderService) AopContext.currentProxy();
         // 3.返回订单id
         return Result.ok(orderId);
     }
-/*
-    @Override
-    public Result seckillVoucher(Long voucherId) {
-        //1.查询优惠券
-        SeckillVoucher voucher = seckillVoucherService.getById(voucherId);
-        //2.判断秒杀是否开始
-        if (voucher.getBeginTime().isAfter(LocalDateTime.now())) {
-            return Result.fail("秒杀尚未开始");
-        }
-        //3.判断秒杀是否结束
-        if (voucher.getEndTime().isBefore(LocalDateTime.now())) {
-            return Result.fail("秒杀已经结束");
-        }
-        //4.判断库存是否充足
-        if (voucher.getStock() < 1) {
-            return Result.fail("库存不足");
-        }
-        Long userId = UserHolder.getUser().getId();
-        //创建锁对象
-        //SimpleRedisLock lock = new SimpleRedisLock(stringRedisTemplate, "order:" + userId);
-        RLock lock = redissonClient.getLock("lock:order:" + userId);
-        //获取锁
-        boolean isLock = lock.tryLock();
-        if (!isLock) {
-            return Result.fail("不允许重复下单");
-        }
-        try {
-            //获取代理对象
-            IVoucherOrderService proxy = (IVoucherOrderService) AopContext.currentProxy();
-            return proxy.createVoucherOrder(voucherId);
-        } catch (IllegalStateException e) {
-            throw new RuntimeException(e);
-        } finally {
-            //释放锁
-            lock.unlock();
-        }
 
-    }
-*/
+    /*
+        @Override
+        public Result seckillVoucher(Long voucherId) {
+            //1.查询优惠券
+            SeckillVoucher voucher = seckillVoucherService.getById(voucherId);
+            //2.判断秒杀是否开始
+            if (voucher.getBeginTime().isAfter(LocalDateTime.now())) {
+                return Result.fail("秒杀尚未开始");
+            }
+            //3.判断秒杀是否结束
+            if (voucher.getEndTime().isBefore(LocalDateTime.now())) {
+                return Result.fail("秒杀已经结束");
+            }
+            //4.判断库存是否充足
+            if (voucher.getStock() < 1) {
+                return Result.fail("库存不足");
+            }
+            Long userId = UserHolder.getUser().getId();
+            //创建锁对象
+            //SimpleRedisLock lock = new SimpleRedisLock(stringRedisTemplate, "order:" + userId);
+            RLock lock = redissonClient.getLock("lock:order:" + userId);
+            //获取锁
+            boolean isLock = lock.tryLock();
+            if (!isLock) {
+                return Result.fail("不允许重复下单");
+            }
+            try {
+                //获取代理对象
+                IVoucherOrderService proxy = (IVoucherOrderService) AopContext.currentProxy();
+                return proxy.createVoucherOrder(voucherId);
+            } catch (IllegalStateException e) {
+                throw new RuntimeException(e);
+            } finally {
+                //释放锁
+                lock.unlock();
+            }
+
+        }
+    */
     @Transactional
     public void createVoucherOrder(VoucherOrder voucherOrder) {
         //5.一人一单

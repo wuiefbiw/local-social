@@ -23,14 +23,17 @@ public class FollowController {
     IFollowService followService;
 
     @PutMapping("/{id}/{isFollow}")
-    public Result follow(@PathVariable("id") Long id, @PathVariable("isFollow") Boolean isFollow) {
-        // TODO 关注/取关
-        return followService.follow(id, isFollow);
+    public Result follow(@PathVariable("id") Long followUserId, @PathVariable("isFollow") Boolean isFollow) {
+        return followService.follow(followUserId, isFollow);
     }
 
     @GetMapping("/or/not/{id}")
-    public Result isFollow(@PathVariable("id") Long id) {
-        // TODO 是否关注
-        return followService.isFollow(id);
+    public Result isFollow(@PathVariable("id") Long followUserId) {
+        return followService.isFollow(followUserId);
+    }
+
+    @GetMapping("/common/{id}")
+    public Result followCommons(@PathVariable("id") Long id) {
+        return followService.followCommons(id);
     }
 }
