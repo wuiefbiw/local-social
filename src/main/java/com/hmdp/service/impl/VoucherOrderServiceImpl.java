@@ -1,21 +1,26 @@
 package com.hmdp.service.impl;
 
 import com.hmdp.dto.Result;
+import com.hmdp.dto.VoucherOrderEvent;
 import com.hmdp.entity.SeckillVoucher;
 import com.hmdp.entity.VoucherOrder;
 import com.hmdp.mapper.VoucherOrderMapper;
 import com.hmdp.service.ISeckillVoucherService;
 import com.hmdp.service.IVoucherOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hmdp.utils.KafkaTopics;
 import com.hmdp.utils.RedisIdWorker;
 import com.hmdp.utils.SimpleRedisLock;
 import com.hmdp.utils.UserHolder;
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,6 +42,7 @@ import java.util.concurrent.Executors;
  * @author 虎哥
  * @since 2021-12-22
  */
+@Slf4j
 @Service
 public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, VoucherOrder> implements IVoucherOrderService {
 
@@ -52,6 +58,9 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
     @Resource
     private RedissonClient redissonClient;
 
+    @Resource
+    private KafkaTemplate<String, VoucherOrderEvent> kafkaTemplate;
+
     private static final DefaultRedisScript<Long> SECKILL_SCRIPT;
 
     static {
@@ -60,13 +69,22 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
         SECKILL_SCRIPT.setResultType(Long.class);
     }
 
+    @Value("${hmdp.voucher-order.async-mode:queue}")
+    private String asyncMode;
+
+    @Value("${hmdp.voucher-order.kafka-topic:" + KafkaTopics.SECKILL_ORDER_CREATE + "}")
+    private String kafkaTopic;
+
     //异步处理线程池
     private static final ExecutorService SECKILL_ORDER_EXECUTOR = Executors.newSingleThreadExecutor();
 
     //在类初始化之后执行，因为当这个类初始化好了之后，随时都是有可能要执行的
     @PostConstruct
     private void init() {
-        SECKILL_ORDER_EXECUTOR.submit(new VoucherOrderHandler());
+        // queue 模式沿用原有阻塞队列消费者；kafka 模式由 @KafkaListener 消费
+        if ("queue".equalsIgnoreCase(asyncMode)) {
+            SECKILL_ORDER_EXECUTOR.submit(new VoucherOrderHandler());
+        }
     }
 
     // 用于线程池处理的任务
@@ -86,27 +104,21 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
                 }
             }
         }
+    }
 
-        private void handleVoucherOrder(VoucherOrder voucherOrder) {
-            //1.获取用户
-            Long userId = voucherOrder.getUserId();
-            // 2.创建锁对象
-            RLock redisLock = redissonClient.getLock("lock:order:" + userId);
-            // 3.尝试获取锁
-            boolean isLock = redisLock.tryLock();
-            // 4.判断是否获得锁成功
-            if (!isLock) {
-                // 获取锁失败，直接返回失败或者重试
-                log.error("不允许重复下单！");
-                return;
-            }
-            try {
-                //注意：由于是spring的事务是放在threadLocal中，此时的是多线程，事务会失效
-                proxy.createVoucherOrder(voucherOrder);
-            } finally {
-                // 释放锁
-                redisLock.unlock();
-            }
+    // 暴露统一处理入口，供阻塞队列与Kafka消费者复用
+    public void handleVoucherOrder(VoucherOrder voucherOrder) {
+        Long userId = voucherOrder.getUserId();
+        RLock redisLock = redissonClient.getLock("lock:order:" + userId);
+        boolean isLock = redisLock.tryLock();
+        if (!isLock) {
+            log.error("不允许重复下单！");
+            return;
+        }
+        try {
+            proxy.createVoucherOrder(voucherOrder);
+        } finally {
+            redisLock.unlock();
         }
     }
 
@@ -139,10 +151,22 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
         voucherOrder.setUserId(userId);
         // 2.5.代金券id
         voucherOrder.setVoucherId(voucherId);
-        // 2.6.放入阻塞队列
-        orderTasks.add(voucherOrder);
-        //3.获取代理对象
+
+        // 先获取代理对象，确保异步线程/消费者复用事务方法
         proxy = (IVoucherOrderService) AopContext.currentProxy();
+
+        if ("kafka".equalsIgnoreCase(asyncMode)) {
+            VoucherOrderEvent event = new VoucherOrderEvent();
+            event.setOrderId(orderId);
+            event.setUserId(userId);
+            event.setVoucherId(voucherId);
+            kafkaTemplate.send(kafkaTopic, String.valueOf(voucherId), event);
+        } else {
+            orderTasks.add(voucherOrder);
+        }
+
+        //3.获取代理对象
+        //proxy = (IVoucherOrderService) AopContext.currentProxy();
         // 3.返回订单id
         return Result.ok(orderId);
     }

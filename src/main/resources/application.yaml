@@ -20,6 +20,27 @@ spring:
         time-between-eviction-runs: 10s
   jackson:
     default-property-inclusion: non_null # JSON处理时忽略非空字段
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: hmdp-seckill-order
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: latest
+      enable-auto-commit: false
+      properties:
+        spring.json.trusted.packages: "*"
+    listener:
+      ack-mode: manual
+
+hmdp:
+  voucher-order:
+    async-mode: queue
+    kafka-topic: seckill-order-create
+
 mybatis-plus:
   type-aliases-package: com.hmdp.entity # 别名扫描包
 logging:
