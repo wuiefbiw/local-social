@@ -1,0 +1,4 @@
+user_count,voucher_id,duration_sec,concurrency,total_requests,throughput_rps,success_count,biz_fail_count,exception_count,p50_ms,p95_ms,p99_ms,avg_ms,max_ms,order_cnt,distinct_users,dup_users,db_stock,redis_stock,redis_order_scard
+500,16,60,300,104706,1745.1,500,104206,0,157.686,302.61,401.958,171.799,2611.263,500,500,0,0,0,500
+1000,17,60,300,126143,2102.38,500,125643,0,134.158,238.556,305.683,142.518,1457.61,500,500,0,0,0,500
+5000,18,60,300,135420,2257.0,500,134920,0,125.547,221.9,279.385,132.775,1310.338,500,500,0,0,0,500

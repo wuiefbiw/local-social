@@ -1,0 +1,32 @@
+{
+  "user_count": 5000,
+  "voucher_id": 18,
+  "duration_sec": 60,
+  "concurrency": 300,
+  "total_requests": 135420,
+  "throughput_rps": 2257.0,
+  "success_count": 500,
+  "biz_fail_count": 134920,
+  "exception_count": 0,
+  "p50_ms": 125.547,
+  "p95_ms": 221.9,
+  "p99_ms": 279.385,
+  "avg_ms": 132.775,
+  "max_ms": 1310.338,
+  "order_cnt": 500,
+  "distinct_users": 500,
+  "dup_users": 0,
+  "db_stock": 0,
+  "redis_stock": 0,
+  "redis_order_scard": 500,
+  "top_messages": [
+    [
+      "库存不足",
+      134920
+    ],
+    [
+      "",
+      500
+    ]
+  ]
+}

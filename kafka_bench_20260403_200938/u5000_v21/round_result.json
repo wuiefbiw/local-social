@@ -1,0 +1,56 @@
+{
+  "user_count": 5000,
+  "voucher_id": 21,
+  "duration_sec": 60,
+  "concurrency": 300,
+  "total_requests": 137834,
+  "throughput_rps": 2297.23,
+  "success_count": 500,
+  "biz_fail_count": 137334,
+  "exception_count": 0,
+  "p50_ms": 121.641,
+  "p95_ms": 213.558,
+  "p99_ms": 261.671,
+  "avg_ms": 126.517,
+  "max_ms": 419.835,
+  "port_stats": {
+    "8081": {
+      "count": 69146,
+      "success": 397,
+      "biz_fail": 68749,
+      "exception": 0,
+      "p50_ms": 121.528,
+      "p95_ms": 213.411,
+      "p99_ms": 261.713,
+      "avg_ms": 126.126,
+      "max_ms": 408.555
+    },
+    "8082": {
+      "count": 68688,
+      "success": 103,
+      "biz_fail": 68585,
+      "exception": 0,
+      "p50_ms": 121.763,
+      "p95_ms": 213.653,
+      "p99_ms": 261.593,
+      "avg_ms": 126.91,
+      "max_ms": 419.835
+    }
+  },
+  "order_cnt": 500,
+  "distinct_users": 500,
+  "dup_users": 0,
+  "db_stock": 0,
+  "redis_stock": 0,
+  "redis_order_scard": 500,
+  "top_messages": [
+    [
+      "库存不足",
+      137334
+    ],
+    [
+      "",
+      500
+    ]
+  ]
+}
