@@ -1,0 +1,23 @@
+run_id: 20260403_171250
+voucher_id: 15
+duration_sec: 60
+concurrency: 160
+total_requests: 112739
+throughput_rps: 1878.98
+p95_ms: 149.395
+p99_ms: 208.51
+avg_ms: 84.402
+max_ms: 1347.482
+success_count: 500
+biz_fail_count: 112239
+exception_count: 0
+stack_8081_samples: 11
+stack_8081_avg_blocked: 0.09
+stack_8081_avg_waiting: 15.64
+stack_8081_avg_timed_waiting: 85.27
+stack_8081_top_hotspot: TIMED_WAITING|at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method) (873)
+stack_8082_samples: 11
+stack_8082_avg_blocked: 6.36
+stack_8082_avg_waiting: 17.0
+stack_8082_avg_timed_waiting: 85.36
+stack_8082_top_hotspot: TIMED_WAITING|at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method) (869)

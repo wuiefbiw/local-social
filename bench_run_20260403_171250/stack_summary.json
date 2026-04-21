@@ -1,0 +1,802 @@
+{
+  "per_sample": {
+    "8081": [
+      {
+        "file": "threaddump_8081_23840_20260403_171250.txt",
+        "blocked": 0,
+        "waiting": 15,
+        "timed_waiting": 11,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            14
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            5
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171256.txt",
+        "blocked": 0,
+        "waiting": 13,
+        "timed_waiting": 97,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            12
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            91
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171302.txt",
+        "blocked": 0,
+        "waiting": 15,
+        "timed_waiting": 94,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            14
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            88
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171308.txt",
+        "blocked": 0,
+        "waiting": 17,
+        "timed_waiting": 91,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            16
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            85
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171314.txt",
+        "blocked": 0,
+        "waiting": 13,
+        "timed_waiting": 96,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            12
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            90
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171320.txt",
+        "blocked": 0,
+        "waiting": 17,
+        "timed_waiting": 91,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            16
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            85
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171326.txt",
+        "blocked": 0,
+        "waiting": 17,
+        "timed_waiting": 90,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            16
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            84
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171332.txt",
+        "blocked": 0,
+        "waiting": 17,
+        "timed_waiting": 92,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            16
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            86
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171338.txt",
+        "blocked": 0,
+        "waiting": 16,
+        "timed_waiting": 91,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            15
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            85
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171344.txt",
+        "blocked": 1,
+        "waiting": 15,
+        "timed_waiting": 93,
+        "top_blocked": [
+          [
+            "at sun.nio.ch.WindowsSelectorImpl$SubSelector.processFDSet(java.base@11.0.27/WindowsSelectorImpl.java:406)",
+            1
+          ]
+        ],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            14
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            87
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8081_23840_20260403_171350.txt",
+        "blocked": 0,
+        "waiting": 17,
+        "timed_waiting": 92,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            16
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            87
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            2
+          ]
+        ]
+      }
+    ],
+    "8082": [
+      {
+        "file": "threaddump_8082_17468_20260403_171250.txt",
+        "blocked": 68,
+        "waiting": 17,
+        "timed_waiting": 13,
+        "top_blocked": [
+          [
+            "at org.springframework.scripting.support.ResourceScriptSource.getScriptAsString(ResourceScriptSource.java:100)",
+            47
+          ],
+          [
+            "at org.springframework.data.redis.core.script.DefaultRedisScript.getSha1(DefaultRedisScript.java:88)",
+            20
+          ],
+          [
+            "at org.springframework.scripting.support.ResourceScriptSource.isModified(ResourceScriptSource.java:109)",
+            1
+          ]
+        ],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            16
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            6
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            4
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171256.txt",
+        "blocked": 0,
+        "waiting": 14,
+        "timed_waiting": 96,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            13
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            90
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171302.txt",
+        "blocked": 0,
+        "waiting": 18,
+        "timed_waiting": 93,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            17
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            87
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171308.txt",
+        "blocked": 0,
+        "waiting": 18,
+        "timed_waiting": 90,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            17
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            84
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171314.txt",
+        "blocked": 0,
+        "waiting": 18,
+        "timed_waiting": 92,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            17
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            85
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            4
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171320.txt",
+        "blocked": 1,
+        "waiting": 13,
+        "timed_waiting": 96,
+        "top_blocked": [
+          [
+            "at org.springframework.data.redis.core.script.DefaultRedisScript.getSha1(DefaultRedisScript.java:87)",
+            1
+          ]
+        ],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            12
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            90
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171326.txt",
+        "blocked": 0,
+        "waiting": 15,
+        "timed_waiting": 95,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            14
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            88
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            4
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171332.txt",
+        "blocked": 0,
+        "waiting": 19,
+        "timed_waiting": 91,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            18
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            85
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171338.txt",
+        "blocked": 0,
+        "waiting": 19,
+        "timed_waiting": 90,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            18
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            84
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171344.txt",
+        "blocked": 0,
+        "waiting": 17,
+        "timed_waiting": 93,
+        "top_blocked": [],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            16
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            86
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            4
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      },
+      {
+        "file": "threaddump_8082_17468_20260403_171350.txt",
+        "blocked": 1,
+        "waiting": 19,
+        "timed_waiting": 90,
+        "top_blocked": [
+          [
+            "at sun.nio.ch.WindowsSelectorImpl$SubSelector.processFDSet(java.base@11.0.27/WindowsSelectorImpl.java:406)",
+            1
+          ]
+        ],
+        "top_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            18
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            1
+          ]
+        ],
+        "top_timed_waiting": [
+          [
+            "at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+            84
+          ],
+          [
+            "at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+            3
+          ],
+          [
+            "at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  "aggregate": {
+    "8081": {
+      "samples": 11,
+      "avg_blocked": 0.09,
+      "avg_waiting": 15.64,
+      "avg_timed_waiting": 85.27
+    },
+    "8082": {
+      "samples": 11,
+      "avg_blocked": 6.36,
+      "avg_waiting": 17.0,
+      "avg_timed_waiting": 85.36
+    }
+  },
+  "hotspots": {
+    "8081": [
+      [
+        "TIMED_WAITING|at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+        873
+      ],
+      [
+        "WAITING|at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+        161
+      ],
+      [
+        "TIMED_WAITING|at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+        33
+      ],
+      [
+        "TIMED_WAITING|at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+        32
+      ],
+      [
+        "WAITING|at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+        11
+      ],
+      [
+        "BLOCKED|at sun.nio.ch.WindowsSelectorImpl$SubSelector.processFDSet(java.base@11.0.27/WindowsSelectorImpl.java:406)",
+        1
+      ]
+    ],
+    "8082": [
+      [
+        "TIMED_WAITING|at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+        869
+      ],
+      [
+        "WAITING|at jdk.internal.misc.Unsafe.park(java.base@11.0.27/Native Method)",
+        176
+      ],
+      [
+        "BLOCKED|at org.springframework.scripting.support.ResourceScriptSource.getScriptAsString(ResourceScriptSource.java:100)",
+        47
+      ],
+      [
+        "TIMED_WAITING|at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+        37
+      ],
+      [
+        "TIMED_WAITING|at java.lang.Thread.sleep(java.base@11.0.27/Native Method)",
+        33
+      ],
+      [
+        "BLOCKED|at org.springframework.data.redis.core.script.DefaultRedisScript.getSha1(DefaultRedisScript.java:88)",
+        20
+      ],
+      [
+        "WAITING|at java.lang.Object.wait(java.base@11.0.27/Native Method)",
+        11
+      ],
+      [
+        "BLOCKED|at org.springframework.scripting.support.ResourceScriptSource.isModified(ResourceScriptSource.java:109)",
+        1
+      ],
+      [
+        "BLOCKED|at org.springframework.data.redis.core.script.DefaultRedisScript.getSha1(DefaultRedisScript.java:87)",
+        1
+      ],
+      [
+        "BLOCKED|at sun.nio.ch.WindowsSelectorImpl$SubSelector.processFDSet(java.base@11.0.27/WindowsSelectorImpl.java:406)",
+        1
+      ]
+    ]
+  }
+}

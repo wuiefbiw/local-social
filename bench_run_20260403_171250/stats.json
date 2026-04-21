@@ -1,0 +1,43 @@
+{
+  "run_id": "20260403_171250",
+  "voucher_id": 15,
+  "duration_sec": 60,
+  "concurrency": 160,
+  "total_requests": 112739,
+  "request_stats": {
+    "all": {
+      "count": 112739,
+      "success_count": 500,
+      "biz_fail_count": 112239,
+      "exception_count": 0,
+      "p50_ms": 78.15,
+      "p95_ms": 149.395,
+      "p99_ms": 208.51,
+      "max_ms": 1347.482,
+      "avg_ms": 84.402
+    },
+    "8081": {
+      "count": 54645,
+      "success_count": 250,
+      "biz_fail_count": 54395,
+      "exception_count": 0,
+      "p50_ms": 79.676,
+      "p95_ms": 152.545,
+      "p99_ms": 235.511,
+      "max_ms": 1347.482,
+      "avg_ms": 87.065
+    },
+    "8082": {
+      "count": 58094,
+      "success_count": 250,
+      "biz_fail_count": 57844,
+      "exception_count": 0,
+      "p50_ms": 76.627,
+      "p95_ms": 146.695,
+      "p99_ms": 193.099,
+      "max_ms": 718.72,
+      "avg_ms": 81.898
+    }
+  },
+  "output_dir": "C:\\Users\\16686\\.codex\\memories\\bench_run_20260403_171250"
+}
